@@ -39,6 +39,14 @@ const items = [
         "descripcion": "Idôle EDP - 75ml",
         "precio": 50500,
         "stock": 3
+      },
+      {
+        "id": "6",
+        "titulo": "Lancôme",
+        "imagen": "https://elbalconar.vtexassets.com/arquivos/ids/159701-800-auto?v=638072487431230000&width=800&height=auto&aspect=true",
+        "descripcion": "Base de Maquillaje",
+        "precio": 50500,
+        "stock": 3
       }
   ]
 
