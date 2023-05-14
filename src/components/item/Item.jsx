@@ -16,7 +16,7 @@ const Item = ({id,titulo,imagen,descripcion,precio}) => {
           <h5 className="text-dark mb-0">${precio}</h5>
           {/*Acá me tiene que llevar al itemDetail usando el id*/}
           <button className="card-link">
-            Ver más {id}
+            Ver más
           </button>
         </div>
       </div>

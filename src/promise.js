@@ -30,7 +30,7 @@ const items = [
       "imagen": "https://elbalconar.vtexassets.com/arquivos/ids/159161/3605532612690_1.jpg?v=1769795434",
       "descripcion": "La vie est Belle EDP - 75ml",
       "precio": 58000,
-      "stock": 1
+      "stock": 6
     },
     {
         "id": "5",
@@ -50,3 +50,10 @@ export const bringData = () => {
     })
   }
 
+  export const getItemId = (itemId) =>{
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve (items.find (item=>item.id===itemId))
+        }, 2000);
+    })
+  }
