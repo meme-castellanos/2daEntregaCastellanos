@@ -16,8 +16,8 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   };
 
   return (
-    <div className="d-flex justify-content-center">
-      <div>
+    <div >
+      <div className="d-flex column justify-content-center m-3">
         <button
           type="button"
           className="btn btn-outline-secondary"

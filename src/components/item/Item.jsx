@@ -1,15 +1,15 @@
 import React from "react";
 
-const Item = ({id,titulo,imagen,descripcion,precio}) => {
+const Item = ({id,titulo,imagen, marca, descripcion,precio,stock,categoria}) => {
 
   return (
 
       <div className="card m-2 mt-3" style={{ width: "18rem" }}>
         <img src={imagen} className="card-img-top img-fluid" alt={titulo} />
         <div className="card-body">
-          <h5 className="card-title">{titulo}</h5>
+          <h5 className="card-title">{marca}</h5>
           <p className="card-text">
-            {descripcion}
+            {titulo}
           </p>
         </div>
         <div className="card-body">

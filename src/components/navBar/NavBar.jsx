@@ -1,15 +1,8 @@
 import React from "react";
 import CartWidget from "./CartWidget";
 import logo from "./Assets/bsLogo.png";
-import NavItems from "./NavItems";
-import NavDrop from "./NavDrop";
+
 const NavBar = () => {
-  const navText = ["Inicio", "Contacto", "Sobre Nosotros"];
-  const dropText = [
-    "Fragancias Femeninas",
-    "Fragencias Masculinas",
-    "Maquillajes",
-  ];
   return (
     <div>
       <nav className="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
@@ -29,9 +22,45 @@ const NavBar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              {navText.map((texto, index) => (
-                <NavItems key={index} navItem={texto} />
-              ))}
+              <li className="nav-item">
+                <button
+                  className="nav-link active"
+                  style={{
+                    backgroundColor: "transparent",
+                    color: "whitesmoke",
+                    border: "none",
+                  }}
+                  aria-current="page"
+                >
+                  Inicio
+                </button>{" "}
+              </li>
+              <li className="nav-item">
+                <button
+                  className="nav-link active"
+                  style={{
+                    backgroundColor: "transparent",
+                    color: "whitesmoke",
+                    border: "none",
+                  }}
+                  aria-current="page"
+                >
+                  Sobre Nosotros
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className="nav-link active"
+                  style={{
+                    backgroundColor: "transparent",
+                    color: "whitesmoke",
+                    border: "none",
+                  }}
+                  aria-current="page"
+                >
+                  Contacto
+                </button>
+              </li>
               <li className="nav-item dropdown">
                 <p
                   className="nav-link dropdown-toggle"
@@ -42,9 +71,30 @@ const NavBar = () => {
                   Categorías
                 </p>
                 <ul className="dropdown-menu">
-                  {dropText.map((texto, index) => (
-                    <NavDrop key={index} categoria={texto}/>
-                  ))}
+                  <li>
+                    <button
+                      className="dropdown-item btn btn-outline-secondary"
+                      type="button"
+                    >
+                      Fragancias Femeninas
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item btn btn-outline-secondary"
+                      type="button"
+                    >
+                      Fragancias Masculinas
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item btn btn-outline-secondary"
+                      type="button"
+                    >
+                      Maquillajes
+                    </button>
+                  </li>
                 </ul>
               </li>
             </ul>
