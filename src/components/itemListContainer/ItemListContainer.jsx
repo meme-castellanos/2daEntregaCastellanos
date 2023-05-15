@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "../itemList/ItemList";
-import { bringData } from "../../promise";
+import { bringData, getCategory } from "../../promise";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+  const {categoryId} = useParams()
 
   useEffect(() => {
-    bringData()
-      .then((res) => {
-        setItems(res);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+    const asyncFun = categoryId ? getCategory : bringData
+    asyncFun(categoryId)
+    .then (res =>{setItems(res)})
+    .catch (err=>{console.log(err);})
+    
+  }, [categoryId]);
 
   return (
     <div>

@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Item = ({id,titulo,imagen, marca, descripcion,precio,stock,categoria}) => {
 
+  const navigate= useNavigate();
   return (
 
       <div className="card m-2 mt-3" style={{ width: "18rem" }}>
@@ -14,10 +16,7 @@ const Item = ({id,titulo,imagen, marca, descripcion,precio,stock,categoria}) => 
         </div>
         <div className="card-body">
           <h5 className="text-dark mb-0">${precio}</h5>
-          {/*Acá me tiene que llevar al itemDetail usando el id*/}
-          <button className="card-link">
-            Ver más
-          </button>
+          <button onClick={() => navigate(`/item/${id}`)} className="card-link">Ver más</button>
         </div>
       </div>
     

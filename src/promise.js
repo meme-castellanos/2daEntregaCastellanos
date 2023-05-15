@@ -138,7 +138,7 @@ export const bringData = () => {
     })
   }
 
-  export const getItemsCategory = (categoryId) =>{
+  export const getCategory = (categoryId) =>{
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve (items.filter(item=>item.categoria===categoryId))

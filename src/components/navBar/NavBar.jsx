@@ -1,13 +1,14 @@
 import React from "react";
 import CartWidget from "./CartWidget";
 import logo from "./Assets/bsLogo.png";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <div>
       <nav className="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
         <div className="container-fluid d-flex align-items-center">
-          <img src={logo} alt="logo" />
+          <Link to= {'/'}><img src={logo} alt="logo" /></Link>
           <p className="navbar-brand">Beauty Scents</p>
           <button
             className="navbar-toggler"
@@ -23,7 +24,7 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <button
+                <NavLink to={'/'}
                   className="nav-link active"
                   style={{
                     backgroundColor: "transparent",
@@ -33,7 +34,7 @@ const NavBar = () => {
                   aria-current="page"
                 >
                   Inicio
-                </button>{" "}
+                </NavLink>{" "}
               </li>
               <li className="nav-item">
                 <button
@@ -72,28 +73,28 @@ const NavBar = () => {
                 </p>
                 <ul className="dropdown-menu">
                   <li>
-                    <button
+                    <NavLink to={'/category/1'}
                       className="dropdown-item btn btn-outline-secondary"
                       type="button"
                     >
                       Fragancias Femeninas
-                    </button>
+                    </NavLink>
                   </li>
                   <li>
-                    <button
+                    <NavLink to={'/category/2'}
                       className="dropdown-item btn btn-outline-secondary"
                       type="button"
                     >
                       Fragancias Masculinas
-                    </button>
+                    </NavLink>
                   </li>
                   <li>
-                    <button
+                    <NavLink to={'/category/3'}
                       className="dropdown-item btn btn-outline-secondary"
                       type="button"
                     >
                       Maquillajes
-                    </button>
+                    </NavLink>
                   </li>
                 </ul>
               </li>
