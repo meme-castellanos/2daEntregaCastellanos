@@ -105,7 +105,7 @@ const items = [
         "titulo": "Rubor Blush Subtil",
         "imagen": "https://elbalconar.vtexassets.com/arquivos/ids/159746-800-auto?v=638072495133130000&width=800&height=auto&aspect=true",
         "marca": "Lancôme",
-        "descripcion": "",
+        "descripcion": "Blush Subtil es un rúbor de larga duración muy fino y ligero disponible en distintos colores. Es ideal para lograr un look natural y color de larga duración. Adecuado para todo tipo de pieles.",
         "precio": 19600,
         "stock": 6,
         "categoria":"3"
@@ -130,18 +130,27 @@ export const bringData = () => {
     })
   }
 
+  
+  export const getCategory = (categoryId) =>{
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve (items.filter(item=>item.categoria===categoryId))
+      }, 2000);
+    })
+  }
+
+  export const getBrand = (brand) =>{
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve (items.filter(item=>item.marca===brand))
+      }, 2000);
+    })
+  }
+  
   export const getItemId = (itemId) =>{
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve (items.find (item=>item.id===itemId))
-        }, 2000);
-    })
-  }
-
-  export const getCategory = (categoryId) =>{
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve (items.filter(item=>item.categoria===categoryId))
         }, 2000);
     })
   }

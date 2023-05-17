@@ -16,7 +16,7 @@ const ItemListContainer = () => {
   }, [categoryId]);
 
   return (
-    <div>
+    <div className="container-fluid mb-2">
       <ItemList items={items} />
     </div>
   );

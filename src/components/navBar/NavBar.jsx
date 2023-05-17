@@ -6,7 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <div>
-      <nav className="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
+      <nav className="navbar bg-dark navbar-expand-lg container-fluid" data-bs-theme="dark">
         <div className="container-fluid d-flex align-items-center">
           <Link to= {'/'}><img src={logo} alt="logo" /></Link>
           <p className="navbar-brand">Beauty Scents</p>
@@ -36,8 +36,8 @@ const NavBar = () => {
                   Inicio
                 </NavLink>{" "}
               </li>
-              <li className="nav-item">
-                <button
+              <li className="nav-item mx-auto">
+                <NavLink to={'/aboutUs'}><button
                   className="nav-link active"
                   style={{
                     backgroundColor: "transparent",
@@ -47,10 +47,10 @@ const NavBar = () => {
                   aria-current="page"
                 >
                   Sobre Nosotros
-                </button>
+                </button></NavLink>
               </li>
-              <li className="nav-item">
-                <button
+              <li className="nav-item mx-auto">
+                <NavLink to={'/Contact'}><button
                   className="nav-link active"
                   style={{
                     backgroundColor: "transparent",
@@ -60,7 +60,7 @@ const NavBar = () => {
                   aria-current="page"
                 >
                   Contacto
-                </button>
+                </button></NavLink>
               </li>
               <li className="nav-item dropdown">
                 <p
