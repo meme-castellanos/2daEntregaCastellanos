@@ -9,7 +9,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
   };
 
-  const lessItem = () => {
+  const removeItem = () => {
     if (count > 1) {
       setCount(count - 1);
     }
@@ -21,7 +21,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <button
           type="button"
           className="btn btn-outline-secondary"
-          onClick={lessItem}
+          onClick={removeItem}
         >
           -
         </button>

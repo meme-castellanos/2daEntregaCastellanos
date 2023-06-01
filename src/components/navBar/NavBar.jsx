@@ -9,7 +9,7 @@ const NavBar = () => {
       <nav className="navbar bg-dark navbar-expand-lg container-fluid" data-bs-theme="dark">
         <div className="container-fluid d-flex align-items-center">
           <Link to= {'/'}><img src={logo} alt="logo" /></Link>
-          <p className="navbar-brand">Beauty Scents</p>
+          <p className="navbar-brand">Boutique Scents</p>
           <button
             className="navbar-toggler"
             type="button"
