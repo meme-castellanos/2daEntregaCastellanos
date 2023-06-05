@@ -126,7 +126,7 @@ export const bringData = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve (items);
-        }, 2000);
+        }, 20);
     })
   }
 
@@ -135,7 +135,7 @@ export const bringData = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve (items.filter(item=>item.categoria===categoryId))
-      }, 2000);
+      }, 20);
     })
   }
 
@@ -143,7 +143,7 @@ export const bringData = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve (items.filter(item=>item.marca===brand))
-      }, 2000);
+      }, 20);
     })
   }
   
@@ -151,6 +151,6 @@ export const bringData = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve (items.find (item=>item.id===itemId))
-        }, 2000);
+        }, 20);
     })
   }

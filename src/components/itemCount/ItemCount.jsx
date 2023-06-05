@@ -3,17 +3,18 @@ import React, { useState } from "react";
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
 
-  const addItem = () => {
+  const increase = () => {
     if (count < stock) {
       setCount(count + 1);
     }
   };
 
-  const removeItem = () => {
+  const decrease = () => {
     if (count > 1) {
       setCount(count - 1);
     }
   };
+
 
   return (
     <div >
@@ -21,7 +22,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <button
           type="button"
           className="btn btn-outline-secondary"
-          onClick={removeItem}
+          onClick={decrease}
         >
           -
         </button>
@@ -29,7 +30,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <button
           type="button"
           className="btn btn-outline-secondary"
-          onClick={addItem}
+          onClick={increase}
         >
           +
         </button>
@@ -39,7 +40,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           type="button"
           className="btn btn-outline-secondary"
           onClick={() => onAdd(count)}
-          disabled={!stock}
+          disabled={stock<0}
         >
           Agregar al carrito{" "}
         </button>

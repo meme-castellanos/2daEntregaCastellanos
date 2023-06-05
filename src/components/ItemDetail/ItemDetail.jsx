@@ -1,19 +1,10 @@
 import React, { useContext, useState } from "react";
 import ItemCount from "../itemCount/ItemCount";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 
 
-const ItemDetail = ({
-  id,
-  titulo,
-  imagen,
-  marca,
-  descripcion,
-  precio,
-  stock,
-  categoria,
-}) => {
+const ItemDetail = ({id,titulo,imagen, marca, descripcion,precio, stock}) => {
   const [amountAdded, setAmountAdded] = useState(0);
   const {addItem} = useContext(CartContext)
   const handleOnAdd = (amount) => {
@@ -27,11 +18,7 @@ const ItemDetail = ({
       <div className="m-3" style={{ maxWidth: "540" }}>
         <div className="row g-0">
           <div className="col-md-4">
-            <img
-              src={imagen}
-              className="img-fluid rounded-start"
-              alt={titulo}
-            />
+            <img src={imagen} className="img-fluid rounded-start" alt={titulo}/>
           </div>
           <div className="col-md-8">
             <div className="card-body">
@@ -49,7 +36,7 @@ const ItemDetail = ({
             <div className="card-footer">
               <p className="text-dark mb-0 fs-5">${precio}</p>
               {amountAdded > 0 ? (
-                <button className="card-link btn btn-outline-secondary m-1"
+              <button className="card-link btn btn-outline-secondary m-1"
                 onClick={() => navigate('/cart')} >Terminar compra</button>
               ) : (
                 <ItemCount
