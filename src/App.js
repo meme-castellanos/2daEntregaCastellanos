@@ -11,25 +11,31 @@ import { CartProvider } from "./context/CartContext";
 import Cart from "./components/cart/Cart";
 import Home from "./components/pages/Home";
 import Checkout from "./components/pages/Checkout";
+import { GlobalProvider } from "./context/GlobalContext";
+import Layout from "./components/layout/Layout";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <CartProvider>
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/category/:categoryId" element={<ItemListContainer />}/>
-            <Route path="item/:itemId" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<Cart/>}/>
-            <Route path='/checkout' element={<Checkout/>}/>
-            <Route path="/aboutUs" element={<AboutUs />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<Error404 />} />
-          </Routes>
-          <Footer />
-        </CartProvider>
+        <GlobalProvider>
+          <CartProvider>
+            <NavBar />
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/category/:categoryId" element={<ItemListContainer /> } />
+                <Route path="item/:itemId" element={<ItemDetailContainer />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/aboutUs" element={<AboutUs />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<Error404 />} />
+              </Routes>
+            </Layout>
+            <Footer />
+          </CartProvider>
+        </GlobalProvider>
       </BrowserRouter>
     </div>
   );

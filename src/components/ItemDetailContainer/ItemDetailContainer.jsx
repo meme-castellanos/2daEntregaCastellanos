@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import {getDoc,doc} from 'firebase/firestore'
 import {db} from '../../services/firebase/firebase.config'
+import { GlobalContext } from "../../context/GlobalContext";
 
 const ItemDetailContainer = () => {
+  const {setLoading}=useContext(GlobalContext)
   const [item, setItem] = useState(null);
-  // const [loading,setLoading]=useState(true)
+  
   const {itemId} = useParams();
 
   useEffect(() => {
-    // setLoading(true)
+    setLoading(true)
     const detailDoc = doc(db,'products', itemId)
     getDoc(detailDoc)
     .then(res=>{
@@ -21,9 +23,9 @@ const ItemDetailContainer = () => {
     .catch(error=>{
       console.log(error);
     })
-    /* .finally(()=>{
+    .finally(()=>{
       setLoading(false)
-    }) */
+    })
 
   },[itemId]);
 

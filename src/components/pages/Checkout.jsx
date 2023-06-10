@@ -12,13 +12,14 @@ import {
   collection,
 } from "firebase/firestore";
 import CheckoutForm from "../checkoutForm/CheckoutForm";
+import { GlobalContext } from "../../context/GlobalContext";
 
 const Checkout = () => {
-  // const [loading, setLoading]=useState(true)
   const [orderId, setOrderId] = useState("");
+  const { setLoading } = useContext(GlobalContext);
   const { cart, total, clearCart } = useContext(CartContext);
   const newOrder = async ({ name, phone, email, adress }) => {
-    // setLoading(true)
+    setLoading(true);
     try {
       const objOrder = {
         buyer: {
@@ -59,26 +60,25 @@ const Checkout = () => {
         setOrderId(orderAdded.id);
         clearCart();
       } else {
-        console.error("Hay productos sin stock");
+        console.error("Hay productos sin stock"); //alerta
       }
     } catch (error) {
       console.log(error);
-    } /* finally {
-      setLoading(false) */
-  };
-  /* if (loading) {
-    return <h1>Se está generando su orden...</h1>;
-  } */
-  if (orderId) {
-    return <h1>El id de su orden es: {orderId}</h1>;
-  }
+    } finally {
+      setLoading(false);
+    }
 
-  return (
-    <div>
-      <h1>Checkout</h1>
-      <CheckoutForm onConfirm={newOrder} />
-    </div>
-  );
-};
+    if (orderId) {
+      return <h1>El id de su orden es: {orderId}</h1>; //alerta?
+    }
+  }
+    return (
+      <div>
+        <h1>Checkout</h1>
+        <CheckoutForm onConfirm={newOrder}/>
+      </div>
+    );
+  
+}
 
 export default Checkout;
