@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 
 
-const ItemDetail = ({id,titulo,imagen, marca, descripcion,precio, stock}) => {
+const ItemDetail = ({id,title,img, brand, description, price, stock}) => {
   const [amountAdded, setAmountAdded] = useState(0);
   const {addItem} = useContext(CartContext)
   const handleOnAdd = (amount) => {
     setAmountAdded(amount);
-    const item = {id, titulo, imagen, precio, marca}
+    const item = {id, title, img, price, brand}
     addItem (item, amount)
   };
   const navigate = useNavigate();
@@ -18,23 +18,23 @@ const ItemDetail = ({id,titulo,imagen, marca, descripcion,precio, stock}) => {
       <div className="m-3" style={{ maxWidth: "540" }}>
         <div className="row g-0">
           <div className="col-md-4">
-            <img src={imagen} className="img-fluid rounded-start" alt={titulo}/>
+            <img src={img} className="img-fluid rounded-start" alt={title}/>
           </div>
           <div className="col-md-8">
             <div className="card-body">
               <h5 className="card-title p-3 text-danger-emphasis p-2">
-                {titulo}
+                {title}
               </h5>
               <p className="card-text bg-black text-light mt-1 rounded-top rounded-bottom fs-5">
-                {marca}
+                {brand}
               </p>
               <p className="card-text">
-                <span className="text-body-secondary">{descripcion}</span>
+                <span className="text-body-secondary">{description}</span>
               </p>
             </div>
             <hr />
             <div className="card-footer">
-              <p className="text-dark mb-0 fs-5">${precio}</p>
+              <p className="text-dark mb-0 fs-5">${price}</p>
               {amountAdded > 0 ? (
               <button className="card-link btn btn-outline-secondary m-1"
                 onClick={() => navigate('/cart')} >Terminar compra</button>

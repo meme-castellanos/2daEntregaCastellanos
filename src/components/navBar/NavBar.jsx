@@ -73,7 +73,7 @@ const NavBar = () => {
                 </p>
                 <ul className="dropdown-menu">
                   <li>
-                    <NavLink to={'/category/1'}
+                    <NavLink to={'/category/femeninas'}
                       className="dropdown-item btn btn-outline-secondary"
                       type="button"
                     >
@@ -81,7 +81,7 @@ const NavBar = () => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to={'/category/2'}
+                    <NavLink to={'/category/masculinas'}
                       className="dropdown-item btn btn-outline-secondary"
                       type="button"
                     >
@@ -89,7 +89,7 @@ const NavBar = () => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to={'/category/3'}
+                    <NavLink to={'/category/maquillajes'}
                       className="dropdown-item btn btn-outline-secondary"
                       type="button"
                     >
