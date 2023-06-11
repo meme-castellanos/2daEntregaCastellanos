@@ -76,7 +76,17 @@ const Checkout = () => {
         })
       }
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        position: 'top-end',
+        title: 'Oops...',
+        text: 'Ocurrió un error, intenta nuevamente',
+        color:'#212529',
+        background:'#eeeeee',
+        toast: true,
+        timer:3000,
+        showConfirmButton:false
+      });
     } finally {
       setLoading(false);
     }

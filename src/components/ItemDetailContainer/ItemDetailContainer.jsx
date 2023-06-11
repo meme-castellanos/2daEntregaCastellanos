@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import {getDoc,doc} from 'firebase/firestore'
 import {db} from '../../services/firebase/firebase.config'
 import { GlobalContext } from "../../context/GlobalContext";
+import Swal from "sweetalert2";
 
 const ItemDetailContainer = () => {
   const {setLoading}=useContext(GlobalContext)
@@ -21,13 +22,23 @@ const ItemDetailContainer = () => {
       setItem(detail)
     })
     .catch(error=>{
-      console.log(error);
+      Swal.fire({
+        icon: 'error',
+        position: 'top-end',
+        title: 'Oops...',
+        text: 'Ocurrió un error, intenta nuevamente',
+        color:'#212529',
+        background:'#eeeeee',
+        toast: true,
+        timer:3000,
+        showConfirmButton:false
+      });
     })
     .finally(()=>{
       setLoading(false)
     })
 
-  },[itemId]);
+  },[itemId, setLoading]);
 
   return (
   <div>
