@@ -29,7 +29,7 @@ const ItemListContainer = () => {
   }, [categoryId]);
 
   return (
-    <div className="container-fluid mb-2">
+    <div className="container-fluid mb-0">
       <ItemList items={items} />
     </div>
   );

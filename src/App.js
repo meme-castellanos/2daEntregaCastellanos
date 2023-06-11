@@ -6,14 +6,12 @@ import NavBar from "./components/navBar/NavBar";
 import Footer from "./components/footer/Footer";
 import Error404 from "./components/pages/Error404";
 import AboutUs from "./components/pages/AboutUs";
-import Contact from "./components/pages/Contact";
 import { CartProvider } from "./context/CartContext";
 import Cart from "./components/cart/Cart";
 import Home from "./components/pages/Home";
-import Checkout from "./components/pages/Checkout";
+import Checkout from "./components/checkout/Checkout";
 import { GlobalProvider } from "./context/GlobalContext";
 import Layout from "./components/layout/Layout";
-
 function App() {
   return (
     <div className="App">
@@ -27,9 +25,8 @@ function App() {
                 <Route path="/category/:categoryId" element={<ItemListContainer /> } />
                 <Route path="item/:itemId" element={<ItemDetailContainer />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/checkout" element={<Checkout/>} />
                 <Route path="/aboutUs" element={<AboutUs />} />
-                <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<Error404 />} />
               </Routes>
             </Layout>

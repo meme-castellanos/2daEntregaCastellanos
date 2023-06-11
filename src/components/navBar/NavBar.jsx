@@ -9,7 +9,7 @@ const NavBar = () => {
       <nav className="navbar bg-dark navbar-expand-lg container-fluid" data-bs-theme="dark">
         <div className="container-fluid d-flex align-items-center">
           <Link to= {'/'}><img src={logo} alt="logo" /></Link>
-          <p className="navbar-brand">Boutique Scents</p>
+          <p className="navbar-brand fs-5">Boutique Scents</p>
           <button
             className="navbar-toggler"
             type="button"
@@ -25,7 +25,7 @@ const NavBar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink to={'/'}
-                  className="nav-link active"
+                  className="nav-link active fs-5"
                   style={{
                     backgroundColor: "transparent",
                     color: "whitesmoke",
@@ -38,7 +38,7 @@ const NavBar = () => {
               </li>
               <li className="nav-item mx-auto">
                 <NavLink to={'/aboutUs'}><button
-                  className="nav-link active"
+                  className="nav-link active fs-5"
                   style={{
                     backgroundColor: "transparent",
                     color: "whitesmoke",
@@ -49,22 +49,9 @@ const NavBar = () => {
                   Sobre Nosotros
                 </button></NavLink>
               </li>
-              <li className="nav-item mx-auto">
-                <NavLink to={'/Contact'}><button
-                  className="nav-link active"
-                  style={{
-                    backgroundColor: "transparent",
-                    color: "whitesmoke",
-                    border: "none",
-                  }}
-                  aria-current="page"
-                >
-                  Contacto
-                </button></NavLink>
-              </li>
               <li className="nav-item dropdown">
                 <p
-                  className="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle fs-5"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
@@ -74,7 +61,7 @@ const NavBar = () => {
                 <ul className="dropdown-menu">
                   <li>
                     <NavLink to={'/category/femeninas'}
-                      className="dropdown-item btn btn-outline-secondary"
+                      className="dropdown-item btn btn-outline-secondary fs-6"
                       type="button"
                     >
                       Fragancias Femeninas
@@ -82,7 +69,7 @@ const NavBar = () => {
                   </li>
                   <li>
                     <NavLink to={'/category/masculinas'}
-                      className="dropdown-item btn btn-outline-secondary"
+                      className="dropdown-item btn btn-outline-secondary fs-6"
                       type="button"
                     >
                       Fragancias Masculinas
@@ -90,7 +77,7 @@ const NavBar = () => {
                   </li>
                   <li>
                     <NavLink to={'/category/maquillajes'}
-                      className="dropdown-item btn btn-outline-secondary"
+                      className="dropdown-item btn btn-outline-secondary fs-6"
                       type="button"
                     >
                       Maquillajes
@@ -99,17 +86,6 @@ const NavBar = () => {
                 </ul>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-secondary" type="submit">
-                Buscar
-              </button>
-            </form>
           </div>
         </div>
         <CartWidget />

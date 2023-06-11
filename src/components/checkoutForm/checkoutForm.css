@@ -1,0 +1,19 @@
+label {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 300px;
+  padding: 2px;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  color: #333;
+}
+input {
+  margin: 3px;
+  border-radius: 10px;
+  display: block;
+  padding: 8px;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

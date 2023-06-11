@@ -14,8 +14,8 @@ const ItemDetail = ({id,title,img, brand, description, price, stock}) => {
   };
   const navigate = useNavigate();
   return (
-    <div>
-      <div className="m-3" style={{ maxWidth: "540" }}>
+    <div className="mb-0">
+      <div className="container m-3 mb-0" style={{ maxWidth: "540" }}>
         <div className="row g-0">
           <div className="col-md-4">
             <img src={img} className="img-fluid rounded-start" alt={title}/>
@@ -29,7 +29,7 @@ const ItemDetail = ({id,title,img, brand, description, price, stock}) => {
                 {brand}
               </p>
               <p className="card-text">
-                <span className="text-body-secondary">{description}</span>
+                <span className="text-body-secondary text-wrap">{description}</span>
               </p>
             </div>
             <hr />

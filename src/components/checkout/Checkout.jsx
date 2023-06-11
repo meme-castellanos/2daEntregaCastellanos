@@ -13,17 +13,19 @@ import {
 } from "firebase/firestore";
 import CheckoutForm from "../checkoutForm/CheckoutForm";
 import { GlobalContext } from "../../context/GlobalContext";
+import Swal from "sweetalert2";
 
 const Checkout = () => {
   const [orderId, setOrderId] = useState("");
   const { setLoading } = useContext(GlobalContext);
   const { cart, total, clearCart } = useContext(CartContext);
-  const newOrder = async ({ name, phone, email, adress }) => {
+  const newOrder = async ({ lastName, firstName, phone, email, adress }) => {
     setLoading(true);
     try {
       const objOrder = {
         buyer: {
-          name,
+          firstName,
+          lastName,
           phone,
           email,
           adress,
@@ -60,7 +62,18 @@ const Checkout = () => {
         setOrderId(orderAdded.id);
         clearCart();
       } else {
-        console.error("Hay productos sin stock"); //alerta
+        console.error("Hay productos sin stock"); 
+        Swal.fire({
+          icon: 'error',
+          position: 'top-end',
+          title: 'Oops...',
+          text: 'No tenemos suficiente stock de un producto del carrito!',
+          color:'#212529',
+          background:'#eeeeee',
+          toast: true,
+          timer:3000,
+          showConfirmButton:false
+        })
       }
     } catch (error) {
       console.log(error);
@@ -69,7 +82,7 @@ const Checkout = () => {
     }
 
     if (orderId) {
-      return <h1>El id de su orden es: {orderId}</h1>; //alerta?
+      return <h1> El número de referncia de su compra es: {orderId}</h1>; 
     }
   }
     return (

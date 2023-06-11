@@ -8,14 +8,15 @@ const Cart = () => {
   const navigate = useNavigate();
   if (cart.length === 0) {
     return (
-      <div>
+      <div style={{height: '80vh'}}>
         <h1>No hay productos en el carrito</h1>
-        <button className="btn btn-secondary m-2" onClick={()=>navigate ('/')}>Inicio</button>
+
+        <button className="btn btn-secondary" onClick={()=>navigate ('/')}>Inicio</button>
       </div>
     );
   }
   return (
-    <div>
+    <div className="h-100 d-inline-block" style={{width: '120'}}>
       {cart.map((product,key) => 
         <div key={product.id}>
           <CartItem key={product.id} {...product} />
@@ -23,11 +24,11 @@ const Cart = () => {
         </div>
       )}
       <h3>Total: {total()} </h3>
-      <button className="btn btn-secondary m-2" onClick={() => clearCart()}>
+      <button className="btn btn-outline-secondary m-2" onClick={() => clearCart()}>
         Vaciar Carrito
       </button>
       <button
-        className="btn btn-secondary m-2"
+        className="btn btn-outline-secondary m-2"
         onClick={() => navigate("/checkout")}
       >
         Finalizar compra
