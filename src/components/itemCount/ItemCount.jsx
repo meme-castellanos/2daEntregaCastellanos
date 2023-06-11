@@ -58,7 +58,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           disabled={stock<0} 
         >
           <i
-              className="fa-solid fa-cart-shopping"
+              className="fa-solid fa-cart-shopping fa-2x"
               style={{ color: "#212529" }}
             ></i> 
         </button>

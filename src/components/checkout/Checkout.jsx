@@ -14,11 +14,13 @@ import {
 import CheckoutForm from "../checkoutForm/CheckoutForm";
 import { GlobalContext } from "../../context/GlobalContext";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const [orderId, setOrderId] = useState("");
   const { setLoading } = useContext(GlobalContext);
   const { cart, total, clearCart } = useContext(CartContext);
+  const navigate=useNavigate()
   const newOrder = async ({ lastName, firstName, phone, email, adress }) => {
     setLoading(true);
     try {
@@ -61,8 +63,7 @@ const Checkout = () => {
         const orderAdded = await addDoc(orderRef, objOrder);
         setOrderId(orderAdded.id);
         clearCart();
-      } else {
-        console.error("Hay productos sin stock"); 
+      } else { 
         Swal.fire({
           icon: 'error',
           position: 'top-end',
@@ -78,22 +79,27 @@ const Checkout = () => {
     } catch (error) {
       Swal.fire({
         icon: 'error',
-        position: 'top-end',
         title: 'Oops...',
-        text: 'Ocurrió un error, intenta nuevamente',
-        color:'#212529',
-        background:'#eeeeee',
-        toast: true,
-        timer:3000,
-        showConfirmButton:false
+        text: 'Ha ocurrido un error, intenta nuevamente',
+        color: "#a6be06",
+        timer: 5000
+
       });
     } finally {
       setLoading(false);
     }
 
-    if (orderId) {
-      return <h1> El número de referncia de su compra es: {orderId}</h1>; 
-    }
+    
+  }
+  if (orderId) {
+    return <div className="container-fluid bg-dark m-6" style={{height:"50vh"}}> 
+      <h1 className="text-light bg-dark m-3 mt-0">Muchas gracias por tu compra!</h1> <h3 className="text-light bg-dark m-3">El número de referencia para porsteriores consultas, es: {orderId}</h3><i className="fa-solid fa-bag-shopping fa-5x m-3" style={{color: "#a6a6a6"}}></i><button
+                className="card-link btn btn-outline-secondary m-1"
+                onClick={() => navigate('/')}
+              >
+                Volver
+              </button>
+      </div>; 
   }
     return (
       <div>
