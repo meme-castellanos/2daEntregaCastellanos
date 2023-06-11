@@ -14,7 +14,7 @@ const ItemDetail = ({id,title,img, brand, description, price, stock}) => {
   };
   const navigate = useNavigate();
   return (
-    <div className="mb-0">
+    <div className=" container mb-0">
       <div className="container m-3 mb-0" style={{ maxWidth: "540" }}>
         <div className="row g-0">
           <div className="col-md-4">

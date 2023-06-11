@@ -90,19 +90,19 @@ const Checkout = () => {
   };
   if (orderId) {
     return (
-      <div className="container-fluid bg-dark m-6 d-flex flex-column" style={{ height: "50vh" }}>
-        <h1 className="text-light bg-dark m-3 mt-0">
+      <div className="container-fluid bg-dark m-6 d-flex flex-column text-wrap" style={{ MaxHeight: "40vh" }}>
+        <h1 className="bg-dark m-3 mt-0 text-success text-wrap text-center">
           Muchas gracias por tu compra!
         </h1>{" "}
-        <h3 className="text-light bg-dark m-3">
+        <h5 className="text-light bg-dark m-3 text-wrap text-center">
           El número de referencia para porsteriores consultas, es: {orderId}
-        </h3>
+        </h5>
         <i
-          className="fa-solid fa-bag-shopping fa-5x m-3"
+          className="fa-solid fa-bag-shopping fa-4x m-3"
           style={{ color: "#a6a6a6" }}
         ></i>
         <button
-          className="card-link btn btn-outline-secondary m-1"
+          className="card-link btn btn-outline-secondary mx-auto" style={{maxWidth:'200px'}}
           onClick={() => navigate("/")}
         >
           Volver
