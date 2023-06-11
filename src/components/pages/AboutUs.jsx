@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 const AboutUs = () => {
   const navigate = useNavigate();
   return (
-    <div className="container pt-3" style={{ backgroundColor: "#eee" }}>
+    <div className="container pt-3">
       <h1 className="m-0 text-danger">Sobre Nosotros</h1>
-      <p>
+      <p className="text-wrap fw-lighter">
         Bienvenidos a Boutique Scents tu destino para descubrir las
         fragancias más exquisitas y exclusivas. Nos enorgullece ofrecerte una
         amplia selección de perfumes de lujo, productos para el cuidado personal
@@ -27,7 +27,7 @@ const AboutUs = () => {
       </p>
       <div>
         <img
-          className="img-fluid"
+          className="img-fluid img-thumbnail rounded"
           src="https://media.fashionnetwork.com/m/4cb2/c846/af5a/5405/5020/3e84/2725/3c2b/76fa/21d2/21d2.jpg"
           alt="sobre nosotros"
         />

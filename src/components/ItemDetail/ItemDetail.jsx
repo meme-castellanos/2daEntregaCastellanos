@@ -14,11 +14,11 @@ const ItemDetail = ({id,title,img, brand, description, price, stock}) => {
   };
   const navigate = useNavigate();
   return (
-    <div className=" container mb-0">
-      <div className="container m-3 mb-0" style={{ maxWidth: "540" }}>
-        <div className="row g-0">
-          <div className="col-md-4">
-            <img src={img} className="img-fluid rounded-start" alt={title}/>
+    <div className="container mb-0" style={{ minHeight: "70vh" }}>
+      <div className="container mb-0" style={{ maxWidth: "540" }}>
+        <div className="container row g-0 align-items-center">
+          <div className="container col-md-4">
+            <img src={img} className="img-fluid" alt={title}/>
           </div>
           <div className="col-md-8">
             <div className="card-body">
@@ -35,6 +35,7 @@ const ItemDetail = ({id,title,img, brand, description, price, stock}) => {
             <hr />
             <div className="card-footer">
               <p className="text-dark mb-0 fs-5">${price}</p>
+              <div className="d-flex flex-column">
               {amountAdded > 0 ? (
               <button className="card-link btn btn-outline-secondary m-1"
                 onClick={() => navigate('/cart')} >Terminar compra</button>
@@ -46,11 +47,13 @@ const ItemDetail = ({id,title,img, brand, description, price, stock}) => {
                 />
               )}
               <button
-                className="card-link btn btn-outline-secondary m-1"
+                className="btn btn-outline-secondary border border-0 m-1"
                 onClick={() => navigate(-1)}
               >
                 Volver
               </button>
+              </div>
+              
             </div>
           </div>
         </div>

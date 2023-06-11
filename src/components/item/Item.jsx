@@ -7,7 +7,7 @@ const Item = ({id,title,img, brand, description, price, stock, category}) => {
   return (
 
       <div className="card m-2 mt-3" style={{ width: "18rem" }}>
-        <img src={img} className="card-img-top img-fluid" alt={title} />
+        <img src={img} className="card-img-top img-fluid img-thumbnail mt-3" alt={title} />
         <div className="card-body">
           <h5 className="card-title card text-bg-dark mb-3">{brand}</h5>
           <p className="card-text">

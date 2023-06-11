@@ -12,7 +12,7 @@ const CartItem = ({ id, title, img, price, brand, amount }) => {
       >
         <div className="row g-0 align-items-center">
           <div className="col-md-4 w-25">
-            <img src={img} className="img-fluid rounded-start" alt={title} />
+            <img src={img} className="img-fluid img-thumbnail rounded" alt={title} />
           </div>
           <div className="col-md-8">
             <div className="card-body">
