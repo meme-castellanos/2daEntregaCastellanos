@@ -69,4 +69,45 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-![Gif de navegación, segunda preentrega](./Castellanos.gif)
+# Perfumería Online
+
+Este es un proyecto de e-commerce para una perfumería online. Permite a los usuarios explorar y comprar productos de perfumería de forma sencilla.
+
+## Tecnologías utilizadas
+
+- React.js
+- Sweet Alert
+- React Router DOM
+- React Spinners
+- Bootstrap
+- Font Awesome
+
+## Funcionalidades
+
+- Vista de productos: los usuarios pueden ver una lista de productos disponibles, incluyendo detalles como nombre, descripción, precio y disponibilidad.
+- Búsqueda de productos: los usuarios pueden buscar productos específicos utilizando filtros por categoria.
+- Carrito de compras: los usuarios pueden agregar productos al carrito de compras, eliminar productos y vaciar el carrito.
+- Proceso de checkout: los usuarios pueden completar el proceso de compra proporcionando información de contacto y dirección de envío.
+- Alertas de confirmación: se utilizan las Sweet Alerts para mostrar alertas de confirmación al realizar acciones importantes, como agregar productos al carrito o completar una compra.
+- Diseño responsivo: el proyecto está diseñado para ser compatible con dispositivos móviles y se adapta a diferentes tamaños de pantalla.
+
+## Instalación
+
+1. Clona este repositorio en tu máquina local.
+2. Navega hasta la carpeta del proyecto: `cd perfumeria-online`.
+3. Instala las dependencias: `npm install`.
+4. Inicia la aplicación: `npm start`.
+
+## Contribución
+
+Si deseas contribuir a este proyecto, sigue estos pasos:
+
+1. Realiza un fork del repositorio.
+2. Crea una nueva rama para tu contribución: `git checkout -b feature/nueva-funcionalidad`.
+3. Realiza los cambios y realiza los commits: `git commit -m "Agregar nueva funcionalidad"`.
+4. Sube los cambios a tu repositorio remoto: `git push origin feature/nueva-funcionalidad`.
+5. Abre una pull request en este repositorio.
+
+## Licencia
+
+Este proyecto está bajo la Licencia.
